@@ -154,3 +154,6 @@
          loader2
     其中,loader1指定加载路径为serverlib(Dog, Sample),loader2指定加载路径为clientlib(空),loader3为otherlib(Dog, Sample)。在syslib下执行
     java MyClassLoader可以看到执行结果。可以直接运行MyClassLoader，相当于loader2可以依靠System加载Dog和Sample
+
+5.类的卸载
+    由jvm自带的类加载器加载的类在jvm整个生命周期内不会被卸载，用户自定义的类加载器加载的类是可以被卸载的。loader = null;clazz = null;sample = null;

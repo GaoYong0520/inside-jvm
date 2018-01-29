@@ -127,7 +127,7 @@
         system:父加载器是extend,用户自定义的类加载器的默认父加载器，从classpath下加载类，时java.lang.ClassLoader的子类。
         （父子加载器并非继承关系，也就是说子加载器不一定继承父加载器，父子加载器可能是同一个加载器的两个实例，但是是父子加载器）
 
-    用户自定义的类加载器必须继承ClassLoader。父子加载器形成属性结构，除了跟类加载器，其他的有且仅有一个父加载器。
+    用户自定义的类加载器必须继承ClassLoader。父子加载器形成树形结构，除了根类加载器，其他的有且仅有一个父加载器。
     （自定义loader尝试加载sample,若加载了，直接返回sample类的引用，否则，loader请求system加载，system请求extend,extend请求bootstrap。bootstrap
         尝试加载，不行抛给extend加载，以此类推。若都无法加载，抛出classnotfoundException）
     定义类加载器：成功加载sample类的加载器
@@ -142,3 +142,15 @@
 
 4.用户自定义类加载器
     自己写类加载器需要继承java.lang.Classloader并且重写findClass方法。
+    尝试构造这样的一个结构：(案例Sample, Dog, MyClassLoader)
+        bootstrap
+            |    \
+         extend   loader3
+            |
+         system
+            |
+         loader1
+            |
+         loader2
+    其中,loader1指定加载路径为serverlib(Dog, Sample),loader2指定加载路径为clientlib(空),loader3为otherlib(Dog, Sample)。在syslib下执行
+    java MyClassLoader可以看到执行结果。可以直接运行MyClassLoader，相当于loader2可以依靠System加载Dog和Sample

@@ -53,7 +53,7 @@
         <entry file="file://$PROJECT_DIR$/src/jvm内存划分.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="610">
-              <caret line="113" column="16" lean-forward="false" selection-start-line="113" selection-start-column="16" selection-end-line="113" selection-end-column="16" />
+              <caret line="278" column="56" lean-forward="false" selection-start-line="278" selection-start-column="56" selection-end-line="278" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -350,12 +350,12 @@
       <workItem from="1517125303462" duration="9050000" />
       <workItem from="1517152389294" duration="373000" />
       <workItem from="1517202076528" duration="8433000" />
-      <workItem from="1517302528670" duration="7241000" />
+      <workItem from="1517302528670" duration="9580000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41740000" />
+    <option name="totallyTimeSpent" value="44079000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
@@ -797,6 +797,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-420">
           <caret line="528" column="23" lean-forward="false" selection-start-line="528" selection-start-column="23" selection-end-line="528" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -873,7 +874,7 @@
     <entry file="file://$PROJECT_DIR$/src/jvm内存划分.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="610">
-          <caret line="113" column="16" lean-forward="false" selection-start-line="113" selection-start-column="16" selection-end-line="113" selection-end-column="16" />
+          <caret line="278" column="56" lean-forward="false" selection-start-line="278" selection-start-column="56" selection-end-line="278" selection-end-column="56" />
           <folding />
         </state>
       </provider>

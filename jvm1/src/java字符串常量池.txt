@@ -25,3 +25,76 @@ Java中字符串常量池
   答案是只创建了一个对象，在常量池中也只保存一个引用。
 
   实际上在编译期间，已经将这三个字面量合成了一个。这样做实际上是一种优化，避免了创建多余的字符串对象，也没有发生字符串拼接问题。
+
+
+5.Java中的字符串拼接:
+    <1>.不可变的String对象
+        在Java中,String对象是不可变的(Immutable)。在代码中，可以创建多个某一个String对象的别名。但是这些别名都是的引用是相同的。
+        在Java中，唯一被重载的运算符就是字符串的拼接相关的。+,+=。除此之外，Java设计者不允许重载其他的运算符。
+    <2>真的有性能代价吗?
+        String userName = "Andy";
+        String age = "24";
+        String job = "Developer";
+        String info = userName + age + job;
+
+    <3>.编译器的优化处理
+        真的会有上面的性能代价么，字符串拼接这么常用，没有特殊的处理优化么，答案是有的，这个优化进行在编译器编译.java到bytecode时。
+
+        然后我们使用javap反编译一下编译出来的Concatenation.class文件。javap -c Concatenation。如果没有找到javap命令，请考虑
+        将javap所在目录加入环境变量或者使用javap的完整路径。
+
+        public class Concatenation {
+          public Concatenation();
+            Code:
+               0: aload_0
+               1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+               4: return
+
+          public static void main(java.lang.String[]);
+            Code:
+               0: ldc           #2                  // String Andy
+               2: astore_1
+               3: ldc           #3                  // String 24
+               5: astore_2
+               6: ldc           #4                  // String Developer
+               8: astore_3
+               9: new           #5                  // class java/lang/StringBuilder
+              12: dup
+              13: invokespecial #6                  // Method java/lang/StringBuilder."<init>":()V
+              16: aload_1
+              17: invokevirtual #7                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+              20: aload_2
+              21: invokevirtual #7                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+              24: aload_3
+              25: invokevirtual #7                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+              28: invokevirtual #8                  // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+              31: astore        4
+              33: getstatic     #9                  // Field java/lang/System.out:Ljava/io/PrintStream;
+              36: aload         4
+              38: invokevirtual #10                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+              41: return
+        }
+
+        我们可以看到上面有很多StringBuilder,但是我们在Java代码里并没有显示地调用，这就是Java编译器做的优化，当Java编译器遇到字符串
+        拼接的时候，会创建一个StringBuilder对象，后面的拼接，实际上是调用StringBuilder对象的append方法。这样就不会有我们上面担心的问题了。
+
+    <4>.仍然低效率的情况:
+
+            public void  implicitUseStringBuilder(String[] values) {
+              String result = "";
+              for (int i = 0 ; i < values.length; i ++) {
+                  result += values[i];
+              }
+              System.out.println(result);
+            }
+
+           该种情况会在循环内新建StringBuffer对象，StringBuilder对象创建发生在循环之间，也就是意味着有多少次循环会创建多少个
+           StringBuilder对象
+
+           优化:
+            public void explicitUseStringBuider(String[] values) {
+              StringBuilder result = new StringBuilder();
+              for (int i = 0; i < values.length; i ++) {
+                  result.append(values[i]);
+              }
+            }

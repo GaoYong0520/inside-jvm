@@ -2,6 +2,7 @@ public class t12 {
 
     public static volatile int race = 0;
 
+    //加入sychronized方法可以保证正确性
     public static void increase() {
         race ++;
     }

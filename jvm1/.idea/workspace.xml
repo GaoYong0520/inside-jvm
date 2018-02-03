@@ -24,16 +24,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="自动拆箱和自动装箱.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/自动拆箱和自动装箱.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="881">
-              <caret line="115" column="0" lean-forward="false" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="jvm内存划分.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/jvm内存划分.txt">
           <provider selected="true" editor-type-id="text-editor">
@@ -64,11 +54,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="java内存模型和线程.txt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/java内存模型和线程.txt">
+      <file leaf-file-name="java内存模型.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/java内存模型.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="610">
-              <caret line="194" column="8" lean-forward="false" selection-start-line="194" selection-start-column="8" selection-end-line="194" selection-end-column="8" />
+            <state relative-caret-position="466">
+              <caret line="188" column="22" lean-forward="false" selection-start-line="188" selection-start-column="22" selection-end-line="188" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="java与线程.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/java与线程.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -419,12 +419,12 @@
       <workItem from="1517302528670" duration="9830000" />
       <workItem from="1517324811926" duration="353000" />
       <workItem from="1517375832128" duration="6691000" />
-      <workItem from="1517471195272" duration="14567000" />
+      <workItem from="1517471195272" duration="14698000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65940000" />
+    <option name="totallyTimeSpent" value="66071000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
@@ -470,13 +470,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Dog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/t9.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="24">
@@ -889,10 +882,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java内存模型和线程.txt">
+    <entry file="file://$PROJECT_DIR$/src/java与线程.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="610">
-          <caret line="194" column="8" lean-forward="false" selection-start-line="194" selection-start-column="8" selection-end-line="194" selection-end-column="8" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java内存模型.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="188" column="22" lean-forward="false" selection-start-line="188" selection-start-column="22" selection-end-line="188" selection-end-column="22" />
           <folding />
         </state>
       </provider>

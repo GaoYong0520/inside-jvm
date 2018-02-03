@@ -67,8 +67,8 @@
       <file leaf-file-name="java内存模型和线程.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/java内存模型和线程.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="610">
-              <caret line="95" column="0" lean-forward="true" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+            <state relative-caret-position="24">
+              <caret line="83" column="35" lean-forward="true" selection-start-line="83" selection-start-column="35" selection-end-line="83" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -419,12 +419,12 @@
       <workItem from="1517302528670" duration="9830000" />
       <workItem from="1517324811926" duration="353000" />
       <workItem from="1517375832128" duration="6691000" />
-      <workItem from="1517471195272" duration="10636000" />
+      <workItem from="1517471195272" duration="11645000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62009000" />
+    <option name="totallyTimeSpent" value="63018000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
@@ -891,8 +891,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/java内存模型和线程.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="610">
-          <caret line="95" column="0" lean-forward="true" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+        <state relative-caret-position="24">
+          <caret line="83" column="35" lean-forward="true" selection-start-line="83" selection-start-column="35" selection-end-line="83" selection-end-column="35" />
           <folding />
         </state>
       </provider>

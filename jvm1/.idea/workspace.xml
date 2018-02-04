@@ -64,7 +64,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="java与线程.markdown" pinned="false" current-in-tab="true">
+      <file leaf-file-name="java与线程.markdown" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/java与线程.markdown">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="425">
@@ -87,11 +87,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="线程安全和锁优化.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/线程安全和锁优化.txt">
+      <file leaf-file-name="线程安全和锁优化.markdown" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/线程安全和锁优化.markdown">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="785">
+              <caret line="137" column="13" lean-forward="false" selection-start-line="137" selection-start-column="13" selection-end-line="137" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -160,6 +160,7 @@
         <option value="$PROJECT_DIR$/src/java内存模型.txt" />
         <option value="$PROJECT_DIR$/src/java与线程.txt" />
         <option value="$PROJECT_DIR$/src/java与线程.markdown" />
+        <option value="$PROJECT_DIR$/src/线程安全和锁优化.markdown" />
       </list>
     </option>
   </component>
@@ -169,7 +170,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="625" />
     <option name="y" value="48" />
     <option name="width" value="1400" />
@@ -423,15 +424,15 @@
       <workItem from="1517324811926" duration="353000" />
       <workItem from="1517375832128" duration="6691000" />
       <workItem from="1517471195272" duration="14749000" />
-      <workItem from="1517730400008" duration="2331000" />
+      <workItem from="1517730400008" duration="4174000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68453000" />
+    <option name="totallyTimeSpent" value="70296000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1098" extended-state="7" />
+    <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -856,14 +857,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/线程安全和锁优化.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/t10.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
@@ -897,6 +890,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="68" column="31" lean-forward="true" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/线程安全和锁优化.markdown">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="785">
+          <caret line="137" column="13" lean-forward="false" selection-start-line="137" selection-start-column="13" selection-end-line="137" selection-end-column="13" />
           <folding />
         </state>
       </provider>

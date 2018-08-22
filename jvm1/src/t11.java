@@ -6,17 +6,19 @@ public class t11 {
 
         String str2 = "hello";
 
-        System.out.println(str1 == str2);
         //true，表示是一个对象
+        System.out.println(str1 == str2);
+
 
         String str3 = new String("hello");
 
-        System.out.println(str1 == str3);
         //false
+        System.out.println(str1 == str3);
+
 
         String str4 = str3.intern();
-
-        System.out.println(str1 == str4);
         //true
+        System.out.println(str1 == str4);
+
     }
 }

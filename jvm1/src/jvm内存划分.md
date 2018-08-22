@@ -43,81 +43,91 @@
    - 该区域与虚拟机栈所发挥的作用非常相似，只是虚拟机栈为虚拟机执行Java方法服务，而本地方法栈则为使用到的本地操作系统（Native）方法服务。
 
 5. 程序计数器
-   - jvm下一条执行指令的地址。若本地native方法，pc值为undefined。用来追踪指令的执行位置，其实是指向方法区内存的一个内存地址。
+   - jvm下一条执行指令的地址。
+      - 若本地native方法，pc值为undefined。用来追踪指令的执行位置，其实是指向方法区内存的一个内存地址。
         每条线程都有一个独立的的程序计数器，各线程间的计数器互不影响，因此该区域是线程私有的。
 
-    内存溢出情况：
-        java堆:不断new对象并保存引用，保证不被回收
-        方法区:创建大量动态类（方法区非常量池部分），或者大量调用String的intern()方法
-        虚拟机栈和本地方法栈:递归无出口（单前程），不断创建线程并且每个线程无线增加内存
+   - 内存溢出情况：
+      - java堆:不断new对象并保存引用，保证不被回收
+      - 方法区:创建大量动态类（方法区非常量池部分），或者大量调用String的intern()方法
+      - 虚拟机栈和本地方法栈:递归无出口（单前程），不断创建线程并且每个线程无限增加内存
 
-    例子:
-        Object obj = new Object();
-            方法区中借助类加载器加载了该类的静态变量到内存中，同时堆中创建java.lang.Class对象来封装数据结构，产生指针指向方法区数据。new操作在堆区生成
-        了类的实例。在此次操作中，java虚拟机栈在栈帧中记录了obj的引用放入栈。
+    
+   ```
+   // 例：
+   Object obj = new Object();
+   // 方法区中借助类加载器加载了该类的静态变量到内存中，同时堆中创建java.lang.Class对象来封装数据结构，产生指针指向方法区数据。new操作在堆区生成
+   了类的实例。在此次操作中，java虚拟机栈在栈帧中记录了obj的引用放入栈。
+   ```
 
-/内存泄漏：指的是指分配出去的内存没有被回收回来，由于失去了对该内存区域的控制，因而造成了资源的浪费。Java中一般不会产生内存泄露，因为有垃圾回收器自动回收
-|         垃圾，但这也不绝对，当我们new了对象，并保存了其引用，但是后面一直没用它，而垃圾回收器又不会去回收它，这边会造成内存泄露
-|
-\内存溢出：程序所需要的内存超出了系统所能分配的内存（包括动态扩展）的上限
+- 内存泄漏：指的是指分配出去的内存没有被回收回来，由于失去了对该内存区域的控制，因而造成了资源的浪费。Java中一般不会产生内存泄露，因为有垃圾回收器自动回收
+垃圾，但这也不绝对，当我们new了对象，并保存了其引用，但是后面一直没用它，而垃圾回收器又不会去回收它，这边会造成内存泄露
 
+- 内存溢出：程序所需要的内存超出了系统所能分配的内存（包括动态扩展）的上限
 
-
-
-
-
-类型擦除：
-        java的泛型在编译阶段实现，，在运行期被删除。编译器生成的字节码在运行期间并不包含泛型的类型信息。 泛型（Generic）的引入加强了参数类型的安全性，
+- 类型擦除：
+   1. java的泛型在编译阶段实现，，在运行期被删除。编译器生成的字节码在运行期间并不包含泛型的类型信息。 ***泛型（Generic）的引入加强了参数类型的安全性***，
     减少了类型的转换。
-        有没有什么办法可以使集合能够记住集合内元素各类型，且能够达到只要编译时不出现问题，运行时就不会出现“java.lang.ClassCastException”异常呢？
+   2. 有没有什么办法可以使集合能够记住集合内元素各类型，且能够达到只要编译时不出现问题，运行时就不会出现“java.lang.ClassCastException”异常呢？
         答案就是使用泛型。
-    （案例t10）
-        import java.util.ArrayList;
+```java
+//（案例t10）
+    import java.util.ArrayList;
+    public class t10 {
 
-        public class t10 {
-
-            public int test(ArrayList<Integer> t1) {
-                int a = 0;
-                return a;
-            }
-
-            public int test(ArrayList<String> t1) {
-                int a = 0;
-                return a;
-            }
-
-            public static void main(String[] args) {
-
-            }
+        public int test(ArrayList<Integer> t1) {
+            int a = 0;
+            return a;
         }
 
-        报错：有相同的擦除类型。原因是在编译期间，ArrayList<Integer>和ArrayList都会被擦除为ArrayList，泛型的类型对jvm不可见。
+        public int test(ArrayList<String> t1) {
+            int a = 0;
+            return a;
+        }
 
-        在编译后所有的泛型类型都会做相应的转化，转化如下：
-        List<String>、List<T> 擦除后的类型为 List。
-        List<String>[]、List<T>[] 擦除后的类型为 List[]。
-        List<? extends E>、List<? super E> 擦除后的类型为 List<E>。
-        List<T extends Serialzable & Cloneable> 擦除后类型为 List<Serializable>。
+        public static void main(String[] args) {
 
-        jvm如此操作的原因：
-            1.如果把类型信息保留到运行时，需要做大量的重构工作
-            2.兼容原生的老版本类型
+        }
+    }
+``` 
 
-        jvm在编译后就丢失了类型信息，但是这部分很重要，所以泛型的类型检查由编译器负责，并且会报错。
-        由此在java中关于泛型存在:
-            1.泛型的class对象时一样的，类型擦除不会改变class属性:
-                List<String> t1 = new ArrayList<String>();
+### 示例解释
 
-                List<String> t2 = new ArrayList<Integer>();
-                System.out.println(t1.getclass() == t2.getclass());
+- 报错：有相同的擦除类型。原因是在编译期间，ArrayList<Integer>和ArrayList都会被擦除为ArrayList，泛型的类型对jvm不可见。
 
-            2.泛型数组初始化时不能声明泛型类型
-                List<String>[] list = new List<String>[];
-                   在这里可以声明一个带有泛型参数的数组，但是不能初始化该数组，因为执行了类型擦除操作后，相当于List[Object] list = new List<String>
-                ()[];编译器拒绝如此声明,所以提前报错，不允许到jvm那一边，java实现的是伪泛型。
+- 在编译后所有的泛型类型都会做相应的转化，转化如下：
+   - List<String>、List<T> 擦除后的类型为 List。
+   - List<String>[]、List<T>[] 擦除后的类型为 List[]。
+   - List<? extends E>、List<? super E> 擦除后的类型为 List<E>。
+   - List<T extends Serialzable & Cloneable> 擦除后类型为 List<Serializable>。
 
-            3.instanceof 不能带泛型参数:
-                List<String> list = new ArrayList<String>();
-                System.out.println(list instanceof List<String>);
-                jvm编译后会丢失信息，所以编译器不允许这么做，因为要是这么做，在运行时候会出问题。实际上list是一个实例，但是丢失类型后无法判断。
+   - jvm如此操作的原因：
+      1. 如果把类型信息保留到运行时，需要做大量的重构工作
+      2. 兼容原生的老版本类型
+   - jvm在编译后就丢失了类型信息，但是这部分很重要，所以**泛型的类型检查由编译器负责**，并且会报错。
+   由此在java中关于泛型存在:
+      - 泛型的class对象时一样的，类型擦除不会改变class属性:
+       
+        ```
+        List<String> t1 = new ArrayList<String>();
+        List<String> t2 = new ArrayList<Integer>();
+        System.out.println(t1.getclass() == t2.getclass());
+        ```
+      - 泛型数组初始化时不能声明泛型类型
+      
+         `List<String>[] list = new List<String>[];`
+         
+         在这里可以声明一个带有泛型参数的数组，但是不能初始化该数组，因为执行了类型擦除操作后，相当于
+         
+         `List[Object] list = new List<String>()[];`
+         
+         译器拒绝如此声明,所以提前报错，不允许到jvm那一边，java实现的是伪泛型。
+
+      - instanceof不能带泛型参数:
+      
+         `List<String> list = new ArrayList<String>();`
+         
+         `System.out.println(list instanceof List<String>);`
+         
+         jvm编译后会丢失信息，所以编译器不允许这么做，因为要是这么做，在运行时候会出问题。实际上list是一个实例，但是丢失类型后无法判断。
 

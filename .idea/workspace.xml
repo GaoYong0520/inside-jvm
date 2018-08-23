@@ -2,11 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cec2310-0fbc-4499-a915-0c7c799c28fd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jvm1/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jvm1/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jvm1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jvm1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jvm1/jvm1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jvm1/jvm.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jvm1/out/production/jvm1/t11.class" beforeDir="false" afterPath="$PROJECT_DIR$/jvm1/out/production/jvm1/t11.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jvm1/out/production/jvm1/C.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jvm1/out/production/jvm1/Child.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jvm1/out/production/jvm1/Child2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jvm1/out/production/jvm1/Child3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jvm1/out/production/jvm1/Dog.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jvm1/out/production/jvm1/FinalTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jvm1/out/production/jvm1/FinalTest2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jvm1/out/production/jvm1/GC垃圾回收.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jvm1/out/production/jvm1/MyClassLoader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jvm1/out/production/jvm1/Parent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jvm1/out/production/jvm1/Parent2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jvm1/out/production/jvm1/Parent3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jvm1/out/production/jvm1/Sample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jvm1/out/production/jvm1/Singleton.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jvm1/out/production/jvm1/java字符串常量池.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jvm1/out/production/jvm1/jvm内存划分.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jvm1/out/production/jvm1/t1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jvm1/out/production/jvm1/t10.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jvm1/out/production/jvm1/t11.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jvm1/out/production/jvm1/t12$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jvm1/out/production/jvm1/t12.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jvm1/out/production/jvm1/t2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jvm1/out/production/jvm1/t3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jvm1/out/production/jvm1/t4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jvm1/out/production/jvm1/t5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jvm1/out/production/jvm1/t6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jvm1/out/production/jvm1/t7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jvm1/out/production/jvm1/t8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jvm1/out/production/jvm1/t9.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jvm1/out/production/jvm1/类加载器部分.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jvm1/out/production/jvm1/自动拆箱和自动装箱.txt" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -192,12 +218,12 @@
       <option name="presentableId" value="Default" />
       <updated>1534922998133</updated>
       <workItem from="1534923000312" duration="130000" />
-      <workItem from="1535011395811" duration="336000" />
+      <workItem from="1535011395811" duration="606000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="466000" />
+    <option name="totallyTimeSpent" value="736000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />

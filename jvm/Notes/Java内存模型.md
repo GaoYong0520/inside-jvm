@@ -166,24 +166,23 @@
         的发生，可以通过Thread.interrupted（）方法检测到是否有中断发生。
        7. 对象终结规则（Finalizer Rule）：一个对象的初始化完成（构造函数执行结束）先行发生于它的finalize（）方法的开始。
        8. 传递性（Transitivity）：如果操作A先行发生于操作B，操作B先行发生于操作C，那就可以得出操作A先行发生于操作C的结论。
-       - 时间先后顺序与先行发生原则之间基本没有太大的关系，所以我们衡量并发安全问题的时候不要受到时间顺序的干扰，
+    - 时间先后顺序与先行发生原则之间基本没有太大的关系，所以我们衡量并发安全问题的时候不要受到时间顺序的干扰，
         一切必须以先行发
         生原则为准
-
-```
-(例子:
-    private int value=0；
-    pubilc void setValue（int value）{
-        this.value=value；
-    }
-    public int getValue（）{
-        return value；
-    }
-```
+       ```java
+       // (例子:
+       private int value=0;
+       pubilc void setValue(int value){
+           this.value=value;
+       }
+       public int getValue(){
+           return value;
+       }
+       ```
         
 - 分析:
    - 代码清单12-9中显示的是一组再普通不过的getter/setter方法，假设存在线程A和B，线程A先（时间上的先后）调用了“setValue（1）
-        ”，然后线程B调用了同一个对象的“getValue（）”，那么线程B收到的返回值是什么？
+        ”，然后线程B调用了同一个对象的“getValue()”，那么线程B收到的返回值是什么？
    - 我们依次分析一下先行发生原则中的各项规则。
       - 由于两个方法分别由线程A和线程B调用，不在一个线程中，所以程序次序规则在这里不
         适用；

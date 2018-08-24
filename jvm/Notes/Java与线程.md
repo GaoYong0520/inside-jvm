@@ -80,8 +80,6 @@
        - LockSupport.parkUntil（）方法。
     - blocked:阻塞，“阻塞状态”在等待着获取到一个排他锁，这个事件将***在另外一个线程放弃这个锁的时候发生***；
     - terminal:结束，已终止线程的线程状态，线程已经结束执行。
-    
- 
-   ![Java线程状态](thread.png)
+    ![Java线程状态](thread.png)
 
             

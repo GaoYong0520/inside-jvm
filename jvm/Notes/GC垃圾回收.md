@@ -73,7 +73,9 @@
               }
               ```
            3. 只有弱引用与其关联的对象，比如：
-              `WeakReference<String> wr = new WeakReference<String>(new String("world"));`
+              ```
+              WeakReference<String> wr = new WeakReference<String>(new String("world"));
+              ```
    2. 四种引用
        1. 强引用
        

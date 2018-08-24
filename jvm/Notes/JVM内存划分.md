@@ -1,6 +1,7 @@
 # JVM内存划分
 
 ## 内存划分
+
 1. jvm在程序执行中，会把内存划分为以下部分
    1. 线程共享区
       1. java堆区
@@ -9,10 +10,11 @@
       3. 虚拟机栈
       4. 本地方法栈
       5. 程序计数器
-   - （其中抛出的各种异常如下：
+      - （其中抛出的各种异常如下：
         OutOfMemoryError:java堆，方法区，多线程时候虚拟机栈和本地方法栈
         StackOutFlowError:虚拟机栈，本地方法栈单线程运行时
         **其中程序积水不会有内存溢出的异常）
+
 ## 详细介绍
 
 1. java堆区
@@ -52,13 +54,12 @@
       - 方法区:创建大量动态类（方法区非常量池部分），或者大量调用String的intern()方法
       - 虚拟机栈和本地方法栈:递归无出口（单前程），不断创建线程并且每个线程无限增加内存
 
-    
-   ```
-   // 例：
-   Object obj = new Object();
-   // 方法区中借助类加载器加载了该类的静态变量到内存中，同时堆中创建java.lang.Class对象来封装数据结构，产生指针指向方法区数据。new操作在堆区生成
-   了类的实例。在此次操作中，java虚拟机栈在栈帧中记录了obj的引用放入栈。
-   ```
+      ```java
+      // 例：
+      Object obj = new Object();
+      // 方法区中借助类加载器加载了该类的静态变量到内存中，同时堆中创建java.lang.Class对象来封装数据结构，产生指针指向方法区数据。new操作在堆区生成
+      // 了类的实例。在此次操作中，java虚拟机栈在栈帧中记录了obj的引用放入栈。
+      ```
 
 - 内存泄漏：指的是指分配出去的内存没有被回收回来，由于失去了对该内存区域的控制，因而造成了资源的浪费。Java中一般不会产生内存泄露，因为有垃圾回收器自动回收
 垃圾，但这也不绝对，当我们new了对象，并保存了其引用，但是后面一直没用它，而垃圾回收器又不会去回收它，这边会造成内存泄露
@@ -70,26 +71,26 @@
     减少了类型的转换。
    2. 有没有什么办法可以使集合能够记住集合内元素各类型，且能够达到只要编译时不出现问题，运行时就不会出现“java.lang.ClassCastException”异常呢？
         答案就是使用泛型。
-```java
-//（案例t10）
-    import java.util.ArrayList;
-    public class t10 {
-
-        public int test(ArrayList<Integer> t1) {
-            int a = 0;
-            return a;
-        }
-
-        public int test(ArrayList<String> t1) {
-            int a = 0;
-            return a;
-        }
-
-        public static void main(String[] args) {
-
-        }
-    }
-``` 
+      ```java
+      //（案例t10）
+          import java.util.ArrayList;
+          public class t10 {
+      
+              public int test(ArrayList<Integer> t1) {
+                  int a = 0;
+                  return a;
+              }
+      
+              public int test(ArrayList<String> t1) {
+                  int a = 0;
+                  return a;
+              }
+      
+              public static void main(String[] args) {
+      
+              }
+          }
+      ``` 
 
 ### 示例解释
 
@@ -108,11 +109,11 @@
    由此在java中关于泛型存在:
       - 泛型的class对象时一样的，类型擦除不会改变class属性:
        
-        ```
-        List<String> t1 = new ArrayList<String>();
-        List<String> t2 = new ArrayList<Integer>();
-        System.out.println(t1.getclass() == t2.getclass());
-        ```
+         ```java
+         List<String> t1 = new ArrayList<String>();
+         List<String> t2 = new ArrayList<Integer>();
+         System.out.println(t1.getclass() == t2.getclass());
+         ```
       - 泛型数组初始化时不能声明泛型类型
       
          `List<String>[] list = new List<String>[];`
